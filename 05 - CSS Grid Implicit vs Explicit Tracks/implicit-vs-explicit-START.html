@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>CSS Grid Implicit vs Explicit Grid Tracks!</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <style>
+    .container {
+      display: grid;
+      grid-gap:20px;
+      grid-template-columns: 200px 400px;
+      /* we created columns so they are explicit, rows are automatically created so they are Implicit. */
+      /* solid black line in dev tools is where explicit line start & ends. */
+      grid-template-rows:100px 50px;
+      /* here we explicitly defined 4 divs, last 2 are implicitly created, so to style them use below property */
+      grid-auto-rows:500px;
+      grid-auto-columns: 100px; /*this doesn't work because there are no implicit columns we defined them, see next video */
+    }
+  </style>
+</body>
+
+</html>
